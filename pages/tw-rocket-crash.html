@@ -1,0 +1,492 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"
+      integrity="sha512-GWzVrcGlo0TxTRvz9ttioyYJ+Wwk9Ck0G81D+eO63BaqHaJ3YZX9wuqjwgfcV/MrB2PhaVX9DkYVhbFpStnqpQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>tw-rocket-crash</title>
+    <style>
+      * {
+        color-scheme: dark;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div
+      class="relative mx-auto flex h-screen max-w-[1920px] flex-col overflow-auto bg-zinc-900 text-white lg:flex-row"
+    >
+      <!-- Game Play -->
+      <div class="flex flex-1 flex-col">
+        <!-- NavTop -->
+        <div class="flex h-16 items-center justify-between gap-3 border-b border-zinc-700 p-3">
+          <button
+            class="flex items-center gap-2 rounded-md bg-zinc-700 px-4 py-1.5 hover:bg-zinc-600 active:bg-zinc-600/80"
+          >
+            <i class="fa fa-plane-up"></i>Build
+          </button>
+          <div class="flex items-center gap-3">
+            <button
+              class="flex items-center gap-2 rounded-md px-4 py-1.5 font-bold hover:bg-zinc-700 active:bg-zinc-700/80"
+            >
+              <i class="fa fa-sack-dollar text-yellow-400"></i>
+              14,414.90
+            </button>
+            <label
+              class="inline-flex w-12 cursor-pointer items-center rounded-md px-3 py-1.5 hover:bg-zinc-700 active:bg-zinc-700/80"
+            >
+              <input type="checkbox" value="" class="peer sr-only" />
+              <span class="peer-checked:hidden">
+                <i class="fa-solid fa-volume-xmark"></i>
+              </span>
+              <span class="hidden peer-checked:block">
+                <i class="fa fa-volume-high"></i>
+              </span>
+            </label>
+          </div>
+        </div>
+        <!-- Play -->
+        <div class="relative flex flex-1 flex-col bg-zinc-800">
+          <div class="flex items-center gap-3 overflow-y-auto p-3">
+            <button
+              class="flex h-8 items-center gap-2 rounded-md border border-zinc-700 bg-zinc-900 px-3 py-1.5 hover:bg-zinc-700 active:bg-zinc-700/80"
+            >
+              <i class="fa fa-minus"></i>
+            </button>
+            <button
+              class="flex h-8 items-center gap-2 rounded-md border border-zinc-700 bg-zinc-900 px-3 py-1.5 text-sm font-semibold hover:bg-zinc-700 active:bg-zinc-700/80"
+            >
+              1.05
+            </button>
+            <button
+              class="flex h-8 items-center gap-2 rounded-md border border-zinc-700 bg-zinc-900 px-3 py-1.5 text-sm font-semibold hover:bg-zinc-700 active:bg-zinc-700/80"
+            >
+              2.17
+            </button>
+            <button
+              class="flex h-8 items-center gap-2 rounded-md border border-zinc-700 bg-zinc-900 px-3 py-1.5 text-sm font-semibold hover:bg-zinc-700 active:bg-zinc-700/80"
+            >
+              18.55
+            </button>
+            <button
+              class="flex h-8 items-center gap-2 rounded-md border border-zinc-700 bg-zinc-900 px-3 py-1.5 text-sm font-semibold hover:bg-zinc-700 active:bg-zinc-700/80"
+            >
+              13.25
+            </button>
+            <button
+              class="flex h-8 items-center gap-2 rounded-md border border-zinc-700 bg-zinc-900 px-3 py-1.5 text-sm font-semibold hover:bg-zinc-700 active:bg-zinc-700/80"
+            >
+              50.20
+            </button>
+            <button
+              class="flex h-8 items-center gap-2 rounded-md border border-zinc-700 bg-zinc-900 px-3 py-1.5 text-sm font-semibold hover:bg-zinc-700 active:bg-zinc-700/80"
+            >
+              20.65
+            </button>
+            <button
+              class="flex h-8 items-center gap-2 rounded-md border border-zinc-700 bg-zinc-900 px-3 py-1.5 text-sm font-semibold hover:bg-zinc-700 active:bg-zinc-700/80"
+            >
+              100.07
+            </button>
+            <button
+              class="flex h-8 items-center gap-2 rounded-md border border-zinc-700 bg-zinc-900 px-3 py-1.5 text-sm font-semibold hover:bg-zinc-700 active:bg-zinc-700/80"
+            >
+              5.05
+            </button>
+            <button
+              class="flex h-8 items-center gap-2 rounded-md border border-zinc-700 bg-zinc-900 px-3 py-1.5 text-sm font-semibold hover:bg-zinc-700 active:bg-zinc-700/80"
+            >
+              1.05
+            </button>
+          </div>
+          <div class="flex flex-1 flex-col items-center justify-center p-10 text-center">
+            <div class="flex-1"></div>
+            <h1 class="text-6xl font-bold">13.00x</h1>
+          </div>
+        </div>
+        <!-- Control -->
+        <div class="grid grid-cols-1 gap-3 bg-zinc-900 p-3 md:grid-cols-2">
+          <div class="flex flex-col rounded-xl bg-gradient-to-br from-zinc-700 to-gray-800/50 p-5">
+            <div class="flex flex-col items-stretch gap-3 xl:flex-row">
+              <div class="flex flex-1 flex-col items-center justify-center gap-3 overflow-auto">
+                <div class="grid w-full grid-cols-2 gap-3">
+                  <div
+                    class="flex h-14 items-center justify-center gap-3 rounded-xl border border-transparent bg-zinc-800 px-5 py-3.5 hover:border-zinc-500 hover:bg-zinc-800/80"
+                  >
+                    <i class="fa-solid fa-plane-departure"></i>
+                    <span>14.0x</span>
+                  </div>
+                  <div
+                    class="flex h-14 items-center justify-center gap-3 rounded-xl border border-transparent bg-zinc-800 px-5 py-3.5 hover:border-zinc-500 hover:bg-zinc-800/80"
+                  >
+                    <i class="fa-solid fa-plane-arrival"></i>
+                    <span>104.0x</span>
+                  </div>
+                </div>
+                <div class="grid w-full grid-cols-4 gap-3">
+                  <button
+                    class="flex h-8 items-center justify-center gap-2 rounded-xl bg-zinc-600 px-3 py-1.5 text-sm font-semibold hover:bg-zinc-500 active:bg-zinc-500/80"
+                  >
+                    10
+                  </button>
+                  <button
+                    class="flex h-8 items-center justify-center gap-2 rounded-xl bg-zinc-600 px-3 py-1.5 text-sm font-semibold hover:bg-zinc-500 active:bg-zinc-500/80"
+                  >
+                    50
+                  </button>
+                  <button
+                    class="flex h-8 items-center justify-center gap-2 rounded-xl bg-zinc-600 px-3 py-1.5 text-sm font-semibold hover:bg-zinc-500 active:bg-zinc-500/80"
+                  >
+                    20
+                  </button>
+                  <button
+                    class="flex h-8 items-center justify-center gap-2 rounded-xl bg-zinc-600 px-3 py-1.5 text-sm font-semibold hover:bg-zinc-500 active:bg-zinc-500/80"
+                  >
+                    Max
+                  </button>
+                </div>
+              </div>
+              <div class="flex w-auto flex-col gap-4">
+                <button
+                  class="flex h-14 flex-col items-center justify-center rounded-xl bg-gradient-to-r from-lime-500 to-lime-600/80 px-6 py-1.5 text-sm leading-none hover:bg-gradient-to-tr hover:from-lime-500 hover:to-lime-600/80 active:bg-gradient-to-r active:from-lime-500 active:to-lime-600/80"
+                >
+                  Cash out
+                  <span class="flex items-center gap-2 text-lg font-semibold">
+                    <i class="fa fa-sack-dollar text-yellow-400"></i>
+                    300.00
+                  </span>
+                </button>
+                <div class="flex justify-center">
+                  <label class="inline-flex cursor-pointer items-center">
+                    <input type="checkbox" value="" class="peer sr-only" />
+                    <div
+                      class="peer flex h-6 w-10 items-center rounded-full border-gray-600 bg-gray-700 px-1 py-0.5 after:block after:h-4 after:w-4 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-blue-600 peer-checked:after:translate-x-full peer-checked:after:border-white rtl:peer-checked:after:-translate-x-full"
+                    ></div>
+                    <span class="ms-3 text-sm font-medium text-gray-300">Auto</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col rounded-xl bg-gradient-to-br from-zinc-700 to-gray-800/50 p-5">
+            <div class="flex flex-col items-stretch gap-3 xl:flex-row">
+              <div class="flex flex-1 flex-col items-center justify-center gap-3 overflow-auto">
+                <div
+                  class="group flex h-14 w-full items-center justify-center gap-3 rounded-xl border border-transparent bg-zinc-800 px-8 py-3.5 hover:border-zinc-500 hover:bg-zinc-800/80"
+                >
+                  <i class="fa fa-sack-dollar text-yellow-400"></i>
+                  <div class="w-fit">
+                    <input type="number" class="w-20 bg-transparent outline-none" value="300.00" />
+                  </div>
+                </div>
+                <div class="grid w-full grid-cols-4 gap-3">
+                  <button
+                    class="flex h-8 items-center justify-center gap-2 rounded-xl bg-zinc-600 px-3 py-1.5 text-sm font-semibold hover:bg-zinc-500 active:bg-zinc-500/80"
+                  >
+                    10
+                  </button>
+                  <button
+                    class="flex h-8 items-center justify-center gap-2 rounded-xl bg-zinc-600 px-3 py-1.5 text-sm font-semibold hover:bg-zinc-500 active:bg-zinc-500/80"
+                  >
+                    50
+                  </button>
+                  <button
+                    class="flex h-8 items-center justify-center gap-2 rounded-xl bg-zinc-600 px-3 py-1.5 text-sm font-semibold hover:bg-zinc-500 active:bg-zinc-500/80"
+                  >
+                    20
+                  </button>
+                  <button
+                    class="flex h-8 items-center justify-center gap-2 rounded-xl bg-zinc-600 px-3 py-1.5 text-sm font-semibold hover:bg-zinc-500 active:bg-zinc-500/80"
+                  >
+                    Max
+                  </button>
+                </div>
+              </div>
+              <div class="flex w-auto flex-col gap-4">
+                <button
+                  class="flex h-14 flex-col items-center justify-center rounded-xl bg-gradient-to-r from-blue-500 to-blue-600/80 px-6 py-1.5 text-base font-semibold leading-tight hover:bg-gradient-to-tr hover:from-blue-500 hover:to-blue-600/80 active:bg-gradient-to-r active:from-blue-500 active:to-blue-600/80"
+                >
+                  Place bet
+                  <span class="text-sm font-normal">For next round</span>
+                </button>
+                <div class="flex justify-center">
+                  <label class="inline-flex cursor-pointer items-center">
+                    <input type="checkbox" value="" class="peer sr-only" />
+                    <div
+                      class="peer flex h-6 w-10 items-center rounded-full border-gray-600 bg-gray-700 px-1 py-0.5 after:block after:h-4 after:w-4 after:rounded-full after:border after:border-gray-300 after:bg-white after:transition-all after:content-[''] peer-checked:bg-blue-600 peer-checked:after:translate-x-full peer-checked:after:border-white rtl:peer-checked:after:-translate-x-full"
+                    ></div>
+                    <span class="ms-3 text-sm font-medium text-gray-300">Auto</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Statistics -->
+      <div class="flex flex-col border-l border-zinc-800">
+        <div class="grid h-16 grid-cols-3 border-b border-zinc-800 text-sm">
+          <button
+            class="flex items-center justify-center gap-2 border-b border-b-transparent border-b-white px-3 py-4 hover:bg-zinc-700 active:bg-zinc-700/80"
+          >
+            <i class="fa-solid fa-plane-departure"></i>
+            Participants
+          </button>
+          <button
+            class="flex items-center justify-center gap-2 border-b border-b-transparent px-3 py-4 hover:border-b-white hover:bg-zinc-700 active:bg-zinc-700/80"
+          >
+            <i class="fa fa-clock-rotate-left"></i>
+            My Bets
+          </button>
+          <button
+            class="flex items-center justify-center gap-2 border-b border-b-transparent px-3 py-4 hover:border-b-white hover:bg-zinc-700 active:bg-zinc-700/80"
+          >
+            <i class="fa fa-gift"></i>
+            Rewards
+          </button>
+        </div>
+        <div class="flex flex-1 flex-col gap-3 overflow-auto p-3">
+          <div
+            class="flex rounded-xl border border-purple-500/40 bg-gradient-to-tr from-purple-500/10 to-purple-500/40"
+          >
+            <canvas id="myChart" class=""></canvas>
+          </div>
+          <table class="w-full text-sm">
+            <tbody>
+              <tr class="hover:bg-zinc-800">
+                <td class="p-3 text-center"><i class="fa-solid fa-plane-arrival text-2xl"></i></td>
+                <td class="p-3 font-medium">John Doe</td>
+                <td class="p-3 font-medium">1,300.00</td>
+                <td class="p-3">-</td>
+                <td class="p-3">-</td>
+              </tr>
+              <tr class="hover:bg-zinc-800">
+                <td class="p-3 text-center"><i class="fa-solid fa-plane-arrival text-2xl"></i></td>
+                <td class="p-3 font-medium">Ruby Jane</td>
+                <td class="p-3 font-medium">300.00</td>
+                <td class="p-3">-</td>
+                <td class="p-3">-</td>
+              </tr>
+              <tr class="hover:bg-zinc-800">
+                <td class="p-3 text-center"><i class="fa-solid fa-plane-arrival text-2xl"></i></td>
+                <td class="p-3 font-medium">Maria Loka</td>
+                <td class="p-3 font-medium">2,500.00</td>
+                <td class="p-3">-</td>
+                <td class="p-3">-</td>
+              </tr>
+              <tr class="hover:bg-zinc-800">
+                <td class="p-3 text-center"><i class="fa-solid fa-plane-arrival text-2xl"></i></td>
+                <td class="p-3 font-medium">Simon Grime</td>
+                <td class="p-3 font-medium">1,800.00</td>
+                <td class="p-3">-</td>
+                <td class="p-3">-</td>
+              </tr>
+              <tr class="hover:bg-zinc-800">
+                <td class="p-3 text-center"><i class="fa-solid fa-plane-arrival text-2xl"></i></td>
+                <td class="p-3 font-medium">Theo Dor</td>
+                <td class="p-3 font-medium">1,000.00</td>
+                <td class="p-3">-</td>
+                <td class="p-3">-</td>
+              </tr>
+              <tr class="hover:bg-zinc-800">
+                <td class="p-3 text-center"><i class="fa-solid fa-plane-arrival text-2xl"></i></td>
+                <td class="p-3 font-medium">Angel Dion</td>
+                <td class="p-3 font-medium">8,300.00</td>
+                <td class="p-3">-</td>
+                <td class="p-3">-</td>
+              </tr>
+              <tr class="hover:bg-zinc-800">
+                <td class="p-3 text-center"><i class="fa-solid fa-plane-arrival text-2xl"></i></td>
+                <td class="p-3 font-medium">Robbin Hood</td>
+                <td class="p-3 font-medium">2,200.00</td>
+                <td class="p-3">-</td>
+                <td class="p-3">-</td>
+              </tr>
+              <tr class="hover:bg-zinc-800">
+                <td class="p-3 text-center"><i class="fa-solid fa-plane-arrival text-2xl"></i></td>
+                <td class="p-3 font-medium">Anthony Dom</td>
+                <td class="p-3 font-medium">3,300.00</td>
+                <td class="p-3">-</td>
+                <td class="p-3">-</td>
+              </tr>
+              <tr class="hover:bg-zinc-800">
+                <td class="p-3 text-center"><i class="fa-solid fa-plane-arrival text-2xl"></i></td>
+                <td class="p-3 font-medium">Riana Hime</td>
+                <td class="p-3 font-medium">9,300.00</td>
+                <td class="p-3">-</td>
+                <td class="p-3">-</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div
+        class="fixed bottom-5 left-5 flex w-[300px] -translate-x-72 flex-col gap-3 rounded-xl bg-gradient-to-tl from-gray-800 to-zinc-700 p-5 text-center shadow-lg duration-300 hover:-translate-x-0"
+      >
+        <div class="p-5">
+          <i class="fa-solid fa-plane-up text-6xl"></i>
+        </div>
+        <h2 class="text-2xl font-semibold">New rocket is unlocked</h2>
+        <span class="text-sm">Level 10 reached</span>
+        <button class="rounded-xl bg-blue-500 px-4 py-2 hover:bg-blue-600 active:bg-blue-600/80">Apply</button>
+        <button class="rounded-xl border border-zinc-700 px-4 py-2 hover:bg-zinc-700 active:bg-zinc-700/80">
+          Continue with current model
+        </button>
+        <span class="text-sm text-zinc-400">You can switch rocket models in a plane profile at any time later</span>
+      </div>
+
+      <div
+        class="fixed right-5 top-5 flex w-[300px] translate-x-72 flex-col rounded-xl bg-gradient-to-tl from-gray-800 to-zinc-700 text-center shadow-lg duration-300 hover:translate-x-0"
+      >
+        <div class="relative w-full bg-gradient-to-tr from-purple-500/20 to-purple-800/30 p-5">
+          <button class="absolute right-3 top-3 rounded-xl px-2 py-1 hover:bg-zinc-600 active:bg-zinc-600/80">
+            <i class="fa fa-times"></i>
+          </button>
+          <div class="p-5">
+            <i class="fa-solid fa-plane-up text-6xl"></i>
+          </div>
+        </div>
+        <div class="flex flex-col gap-3 p-5 text-left">
+          <span class="text-sm font-semibold">Body Color</span>
+          <div class="flex flex-wrap items-center gap-3">
+            <button
+              class="h-8 w-8 rounded-full bg-blue-500 ring-2 ring-transparent ring-offset-transparent hover:ring-blue-500/50 hover:ring-offset-4 active:bg-blue-600/80"
+            ></button>
+            <button
+              class="h-8 w-8 rounded-full bg-red-500 ring-2 ring-transparent ring-offset-transparent hover:ring-red-500/50 hover:ring-offset-4 active:bg-red-600/80"
+            ></button>
+            <button
+              class="h-8 w-8 rounded-full bg-yellow-500 ring-2 ring-transparent ring-offset-transparent hover:ring-yellow-500/50 hover:ring-offset-4 active:bg-yellow-600/80"
+            ></button>
+            <button
+              class="h-8 w-8 rounded-full bg-purple-500 ring-2 ring-transparent ring-offset-transparent hover:ring-purple-500/50 hover:ring-offset-4 active:bg-purple-600/80"
+            ></button>
+            <button
+              class="h-8 w-8 rounded-full bg-teal-500 ring-2 ring-transparent ring-offset-transparent hover:ring-teal-500/50 hover:ring-offset-4 active:bg-teal-600/80"
+            ></button>
+            <button
+              class="h-8 w-8 rounded-full bg-zinc-500 ring-2 ring-transparent ring-offset-transparent hover:ring-zinc-500/50 hover:ring-offset-4 active:bg-zinc-600/80"
+            ></button>
+            <button
+              class="h-8 w-8 rounded-full bg-lime-500 ring-2 ring-transparent ring-offset-transparent hover:ring-lime-500/50 hover:ring-offset-4 active:bg-lime-600/80"
+            ></button>
+            <button
+              class="h-8 w-8 rounded-full bg-green-500 ring-2 ring-transparent ring-offset-transparent hover:ring-green-500/50 hover:ring-offset-4 active:bg-green-600/80"
+            ></button>
+            <button
+              class="h-8 w-8 rounded-full bg-pink-500 ring-2 ring-transparent ring-offset-transparent hover:ring-pink-500/50 hover:ring-offset-4 active:bg-pink-600/80"
+            ></button>
+          </div>
+          <span class="text-sm font-semibold">Details</span>
+          <div class="flex flex-wrap items-center gap-3">
+            <button
+              class="relative h-8 w-8 rounded-full bg-yellow-500 ring-2 ring-transparent ring-offset-transparent after:absolute after:right-0 after:top-0 after:h-8 after:w-4 after:rounded-r-full after:bg-yellow-600 hover:ring-yellow-500/50 hover:ring-offset-4 active:bg-yellow-600/80"
+            ></button>
+            <button
+              class="relative h-8 w-8 rounded-full bg-purple-500 ring-2 ring-transparent ring-offset-transparent after:absolute after:right-0 after:top-0 after:h-8 after:w-4 after:rounded-r-full after:bg-purple-600 hover:ring-purple-500/50 hover:ring-offset-4 active:bg-purple-600/80"
+            ></button>
+            <button
+              class="relative h-8 w-8 rounded-full bg-teal-500 ring-2 ring-transparent ring-offset-transparent after:absolute after:right-0 after:top-0 after:h-8 after:w-4 after:rounded-r-full after:bg-teal-600 hover:ring-teal-500/50 hover:ring-offset-4 active:bg-teal-600/80"
+            ></button>
+          </div>
+          <button class="mt-3 rounded-xl bg-blue-500 px-4 py-2 hover:bg-blue-600 active:bg-blue-600/80">Apply</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+      const ctx = document.getElementById('myChart')
+      let label = 1
+      let data = 1
+
+      function addData(chart, label, newData) {
+        chart.data.labels.push(label)
+        chart.data.datasets.forEach((dataset) => {
+          if (dataset.label === 'data 1') {
+            dataset.data.push(newData)
+          }
+          if (dataset.label === 'data 2') {
+            dataset.data.push(newData + 1)
+          }
+        })
+        chart.update()
+      }
+
+      let chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: [],
+          datasets: [
+            {
+              label: 'data 1',
+              data: [],
+              borderWidth: 1,
+              fill: false,
+              cubicInterpolationMode: 'monotone',
+              tension: 0.4,
+              radius: 0,
+            },
+            {
+              label: 'data 2',
+              data: [],
+              borderWidth: 1,
+              fill: false,
+              cubicInterpolationMode: 'monotone',
+              tension: 0.4,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          scales: {
+            x: {
+              display: false,
+            },
+            y: {
+              display: false,
+            },
+          },
+          plugins: {
+            title: {
+              display: false,
+            },
+            legend: {
+              display: false,
+            },
+          },
+        },
+      })
+
+      setInterval(() => {
+        label += 1
+        data += 1
+
+        if (data <= 10) {
+          addData(chart, label, data)
+        } else {
+          clearInterval(this)
+        }
+
+        // console.log(labels)
+      }, 1000)
+    </script>
+  </body>
+</html>

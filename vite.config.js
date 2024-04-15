@@ -6,6 +6,7 @@ export default defineConfig({
 		rollupOptions: {
 			input: {
 				main: resolve(__dirname, 'index.html'),
+				rocket: resolve(__dirname, 'pages/tw-rocket-crash.html'),
 			},
 		},
 	},
