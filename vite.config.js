@@ -7,6 +7,7 @@ export default defineConfig({
 			input: {
 				main: resolve(__dirname, 'index.html'),
 				rocket: resolve(__dirname, 'pages/tw-rocket-crash.html'),
+				ship: resolve(__dirname, 'pages/tw-ship-radar.html'),
 			},
 		},
 	},
